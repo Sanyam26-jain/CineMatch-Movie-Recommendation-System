@@ -1,4 +1,7 @@
 # 🎬 CineMatch - Movie Recommendation System
+## 🚀 Live Demo
+
+👉 [Try CineMatch Live](https://cinematch-sanyam.streamlit.app/)
 
 CineMatch is a content-based movie recommendation system built with Python and Machine Learning. It recommends five movies similar to a movie entered by the user.
 
