@@ -1,77 +1,44 @@
-# Movie Recommendation System
+# 🎬 CineMatch - Movie Recommendation System
 
-A content-based movie recommendation engine built with Python and Machine Learning. The system recommends 5 similar movies based on any movie you search, covering Hollywood, Bollywood, Tollywood, and Kollywood films.
+CineMatch is a content-based movie recommendation system built with Python and Machine Learning. It recommends five movies similar to a movie entered by the user.
 
-## How It Works
+The application uses movie metadata such as overview, genres, keywords, cast, and director to identify movies with similar content.
 
-The system uses Natural Language Processing and Machine Learning techniques to find similar movies:
+## 🚀 Features
 
-1. Movie data (genres, keywords, cast, director) is converted into numerical vectors using TF-IDF Vectorization
-2. Cosine Similarity is calculated between the searched movie and all other movies in the dataset
-3. The top 5 most similar movies are returned as recommendations
+- Search for a movie by title
+- Generate 5 similar movie recommendations
+- Content-based recommendation approach
+- TF-IDF based text feature extraction
+- Cosine Similarity for measuring movie similarity
+- Interactive Streamlit web interface
+- Partial movie-title matching
+- Clean and responsive user interface
 
-## Tech Stack
+## 🧠 How It Works
 
-- **Python** - Core programming language
-- **Pandas** - Data loading and preprocessing
-- **Scikit-learn** - TF-IDF Vectorization and Cosine Similarity
-- **Streamlit** - Web application interface
+The recommendation pipeline works in the following steps:
 
-## Dataset
+1. Movie metadata is loaded from the TMDB dataset.
+2. Important information such as overview, genres, keywords, cast, and director is extracted.
+3. These features are combined into a single text representation for each movie.
+4. TF-IDF Vectorization converts the text data into numerical vectors.
+5. Cosine Similarity measures the similarity between the selected movie and other movies.
+6. The five most similar movies are returned as recommendations.
 
-The model is trained on 48,987 movies combined from three datasets:
+### Recommendation Pipeline
 
-- TMDB 5000 Movies Dataset (Hollywood)
-- Indian Movies Dataset (Bollywood, Tollywood, Kollywood, Malayalam)
-- Hollywood and Bollywood Movies Dataset
-
-## Installation and Setup
-
-Clone the repository:
-
-```bash
-git clone https://github.com/AdapakaGunaSekhar004/Movie-Recommendation-System.git
-cd Movie-Recommendation-System
-```
-
-Install dependencies:
-
-```bash
-pip install pandas scikit-learn streamlit
-```
-
-Download the datasets and place them in the project folder:
-- tmdb_5000_movies.csv
-- tmdb_5000_credits.csv
-- All_Movies1.csv
-- indian movies.csv
-
-Run the application:
-
-```bash
-streamlit run app.py
-```
-
-## Usage
-
-1. Open the app in your browser at `http://localhost:8501`
-2. Type a movie name in the search box (e.g. Avatar, Dangal, Baahubali: The Beginning)
-3. Click the Recommend button
-4. View 5 similar movie recommendations
-
-## Project Structure
-
-```
-Movie-Recommendation-System/
-├── app.py              # Streamlit web application
-├── recommender.py      # ML logic and recommendation engine
-└── README.md           # Project documentation
-```
-
-## Key Concepts Demonstrated
-
-- Content-based filtering using machine learning
-- TF-IDF (Term Frequency - Inverse Document Frequency) vectorization
-- Cosine similarity for measuring movie likeness
-- Data preprocessing and merging multiple datasets
-- Building and deploying an interactive web application with Python
+```text
+Movie Input
+     ↓
+Movie Metadata
+     ↓
+Data Preprocessing
+     ↓
+Feature Combination
+     ↓
+TF-IDF Vectorization
+     ↓
+Cosine Similarity
+     ↓
+Top 5 Similar Movies
