@@ -112,7 +112,6 @@ def recommend(movie_title):
 
     # Exact title match
     if movie_title not in indices:
-        # Try partial match
         matches = [
             title for title in indices.index
             if movie_title in title
@@ -135,14 +134,6 @@ def recommend(movie_title):
     # Get top 5 similar movies
     top_indices = scores.argsort()[::-1][1:6]
 
-    recommendations = []
-
-    for i in top_indices:
-        movie_name = combined_df["title"].iloc[i]
-        similarity_score = scores[i]
-
-        recommendations.append(
-            (movie_name, similarity_score)
-        )
-
-    return recommendations
+    return combined_df["title"].iloc[
+        top_indices
+    ].tolist()
